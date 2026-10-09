@@ -49,7 +49,7 @@ a {
   margin: auto;
 }
 
-/* اللوجو الرئيسي */
+/* اللوجو */
 
 header {
   text-align: center;
@@ -58,7 +58,7 @@ header {
 
 .logo {
   display: block;
-  width: min(270px, 68vw);
+  width: min(300px, 75vw);
   height: auto;
   margin: 0 auto 14px;
   border-radius: 50%;
@@ -98,13 +98,13 @@ h1 {
   font-size: 1.25rem;
 }
 
-/* صورة المنيو بحجم أكبر */
+/* المنيو بحجم أكبر */
 
 .menu-card {
   background: #111;
   border: 1px solid #d8b46a85;
   border-radius: 18px;
-  padding: 7px;
+  padding: 5px;
   box-shadow: 0 14px 40px #0005;
 }
 
@@ -126,7 +126,7 @@ h1 {
   margin: 8px 0 0;
 }
 
-/* أزرار التواصل */
+/* الأزرار */
 
 .actions {
   display: flex;
@@ -166,7 +166,7 @@ h1 {
   color: #17120a;
 }
 
-/* زر فيسبوك باللوجو فقط */
+/* فيسبوك - اللوجو فقط */
 
 .facebook-btn {
   width: 49px;
@@ -186,7 +186,7 @@ h1 {
   display: block;
 }
 
-/* قسم TAPIO */
+/* TAPIO */
 
 .tapio {
   margin: 34px 0 28px;
@@ -234,7 +234,7 @@ footer {
   font-size: .82rem;
 }
 
-/* تكبير المنيو عند الضغط */
+/* تكبير المنيو */
 
 .modal {
   position: fixed;
@@ -272,7 +272,7 @@ footer {
   cursor: pointer;
 }
 
-/* تحسين العرض على الموبايل */
+/* الموبايل */
 
 @media (max-width: 520px) {
   header {
@@ -280,7 +280,7 @@ footer {
   }
 
   .logo {
-    width: min(250px, 72vw);
+    width: min(280px, 78vw);
   }
 
   .wrap {
@@ -288,7 +288,7 @@ footer {
   }
 
   .menu-card {
-    padding: 4px;
+    padding: 3px;
   }
 
   .actions {
@@ -309,15 +309,23 @@ footer {
 
 <body>
 
-<!-- اللوجو -->
+<!-- اللوجو الأصلي -->
 
 <header class="wrap">
 
   <img
     class="logo"
-    src="./logo.jpeg"
+    src="./logo.png"
     alt="لوجو درابوكا"
+    onerror="this.style.display='none';document.getElementById('logo-error').style.display='block';"
   >
+
+  <p
+    id="logo-error"
+    style="display:none;color:#d8b46a;font-size:.9rem"
+  >
+    تأكد من رفع صورة اللوجو باسم logo.png
+  </p>
 
   <h1>درابوكا</h1>
 
@@ -358,8 +366,6 @@ footer {
 
   <div class="actions">
 
-    <!-- زر التقييم -->
-
     <a
       class="btn btn-gold"
       href="https://maps.app.goo.gl/TSXeAYqSHPhptaj89?g_st=ic"
@@ -369,7 +375,7 @@ footer {
       ⭐ رأيك يهمني يدولي
     </a>
 
-    <!-- زر فيسبوك: اللوجو فقط -->
+    <!-- زر فيسبوك باللوجو فقط -->
 
     <a
       class="btn facebook-btn"
@@ -391,7 +397,7 @@ footer {
 
   </div>
 
-  <!-- قسم TAPIO -->
+  <!-- TAPIO -->
 
   <section class="tapio">
 
@@ -423,7 +429,7 @@ footer {
   درابوكا © 2026 · تجربة مميزة مع TAPIO
 </footer>
 
-<!-- نافذة عرض المنيو -->
+<!-- نافذة تكبير المنيو -->
 
 <div
   class="modal"
