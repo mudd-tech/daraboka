@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Draboka | Tapio</title>
-
     <meta name="theme-color" content="#0b0907">
-    <meta name="description" content="منيو درابوكا الإلكتروني - رأيك يهمنا مع Tapio">
+
+    <meta name="description"
+          content="منيو درابوكا الإلكتروني - مدعوم من Tapio">
+
+    <title>DRABOKA | TAPIO</title>
 
     <style>
         * {
@@ -16,14 +18,24 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --background: #0b0907;
+            --gold: #d9b477;
+            --light-gold: #f1d6a3;
+            --panel: #17110c;
+            --text: #ffffff;
+        }
+
         body {
             font-family: Arial, Tahoma, sans-serif;
-            background: #0b0907;
-            color: #fff;
-            padding: 20px 15px;
+            background: var(--background);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 20px 14px 30px;
         }
 
         .container {
+            width: 100%;
             max-width: 500px;
             margin: auto;
         }
@@ -33,78 +45,88 @@
         .header {
             text-align: center;
             margin-bottom: 25px;
+            padding-top: 10px;
         }
 
         .logo {
-            width: 75px;
-            height: 75px;
-            border: 2px solid #d9b477;
+            width: 85px;
+            height: 85px;
+            border: 2px solid var(--gold);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0 auto 12px;
-            font-size: 30px;
-            color: #f1d6a3;
+            margin: 0 auto 15px;
+            color: var(--light-gold);
+            font-size: 36px;
         }
 
-        h1 {
-            color: #f1d6a3;
+        .brand-name {
+            font-size: 30px;
             letter-spacing: 4px;
-            font-size: 27px;
+            color: var(--light-gold);
         }
 
         .subtitle {
             color: #c7b9a4;
-            margin-top: 8px;
+            margin-top: 10px;
             font-size: 12px;
+            letter-spacing: 1px;
+            direction: ltr;
         }
 
         /* صورة المنيو */
 
-        .menu {
+        .menu-card {
             width: 100%;
-            border: 1px solid #d9b477;
-            border-radius: 12px;
+            border: 1px solid var(--gold);
+            border-radius: 16px;
             overflow: hidden;
-            background: #17110c;
+            background: var(--panel);
+            margin-bottom: 24px;
         }
 
-        .menu img {
+        .menu-image {
             display: block;
             width: 100%;
             height: auto;
+            object-fit: contain;
+            background: var(--panel);
         }
 
-        .menu-title {
-            padding: 15px;
+        .menu-caption {
+            padding: 16px 10px;
             text-align: center;
-            color: #f1d6a3;
+            color: var(--light-gold);
+            border-top: 1px solid #59452c;
+            font-size: 17px;
         }
 
         /* الأزرار */
 
         .buttons {
-            margin-top: 22px;
             display: flex;
             flex-direction: column;
             gap: 14px;
         }
 
         .btn {
+            width: 100%;
+            min-height: 58px;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             gap: 10px;
-            padding: 17px 12px;
-            border-radius: 12px;
+            padding: 15px;
+            border-radius: 13px;
             text-decoration: none;
+            text-align: center;
             font-size: 16px;
             font-weight: bold;
-            border: 1px solid #d9b477;
-            background: #17110c;
-            color: #f1d6a3;
-            transition: 0.2s;
+            border: 1px solid var(--gold);
+            color: var(--light-gold);
+            background: var(--panel);
+            transition: transform 0.2s ease;
         }
 
         .btn:active {
@@ -112,7 +134,11 @@
         }
 
         .google {
-            background: linear-gradient(135deg, #f1d6a3, #c69a58);
+            background: linear-gradient(
+                135deg,
+                #f1d6a3,
+                #c69a58
+            );
             color: #211508;
             border: none;
         }
@@ -126,70 +152,80 @@
         }
 
         .icon {
-            font-size: 22px;
+            font-size: 23px;
+            flex-shrink: 0;
+        }
+
+        /* النص أسفل الأزرار */
+
+        .note {
+            text-align: center;
+            margin-top: 22px;
+            color: #c7b9a4;
+            font-size: 13px;
+            line-height: 1.9;
         }
 
         /* التذييل */
 
-        .note {
-            text-align: center;
-            color: #c7b9a4;
-            font-size: 13px;
-            margin-top: 22px;
-            line-height: 1.8;
-        }
-
         footer {
             text-align: center;
-            margin-top: 25px;
+            margin-top: 28px;
             padding-top: 20px;
-            border-top: 1px solid #5b452a;
+            border-top: 1px solid #59452c;
             color: #c7b9a4;
             font-size: 13px;
         }
 
-        footer strong {
-            color: #f1d6a3;
-            letter-spacing: 3px;
-            font-size: 17px;
+        .tapio {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 21px;
+            letter-spacing: 4px;
+            color: var(--light-gold);
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <main class="container">
 
-        <!-- شعار Tapio -->
+        <!-- رأس الصفحة -->
 
         <header class="header">
+
             <div class="logo">T</div>
 
-            <h1>DRABOKA</h1>
+            <h1 class="brand-name">DRABOKA</h1>
 
             <p class="subtitle">
                 COFFEE · DRINKS · DESSERTS · SHISHA
             </p>
+
         </header>
 
-        <!-- صورة المنيو -->
+        <!-- صورة المنيو المرفوعة على GitHub -->
 
-        <section class="menu">
+        <section class="menu-card">
 
             <img
-                src="assets/draboka-menu.jpeg"
+                class="menu-image"
+                src="./menu.PNG"
                 alt="منيو درابوكا"
+                loading="eager"
+                onerror="this.onerror=null; this.src='./menu.png';"
             >
 
-            <div class="menu-title">
+            <div class="menu-caption">
                 ☕ منيو درابوكا
             </div>
 
         </section>
 
-        <!-- الأزرار -->
+        <!-- الأزرار الرئيسية -->
 
-        <div class="buttons">
+        <nav class="buttons">
 
             <!-- تقييم جوجل -->
 
@@ -200,7 +236,7 @@
                 rel="noopener noreferrer"
             >
                 <span class="icon">⭐</span>
-                رأيك يهمنا
+                <span>رأيك يهمنا ❤️</span>
             </a>
 
             <!-- صفحة فيسبوك -->
@@ -212,10 +248,10 @@
                 rel="noopener noreferrer"
             >
                 <span class="icon">📘</span>
-                تابعنا على فيسبوك
+                <span>تابعنا على فيسبوك</span>
             </a>
 
-            <!-- طلب استانـد Tapio -->
+            <!-- طلب استانـد Tapio على واتساب -->
 
             <a
                 class="btn whatsapp"
@@ -224,21 +260,25 @@
                 rel="noopener noreferrer"
             >
                 <span class="icon">🚀</span>
-                عجبك الاستاند؟ اطلب واحد لمشروعك
+                <span>عجبك الاستاند؟ اطلب واحد لمشروعك</span>
             </a>
 
-        </div>
+        </nav>
 
         <p class="note">
             قرّب موبايلك من الاستاند واستمتع بتجربة أسرع وأسهل ✨
         </p>
 
+        <!-- علامة Tapio -->
+
         <footer>
-            مدعوم من<br><br>
-            <strong>TAPIO</strong>
+            مدعوم من
+            <br>
+            <strong class="tapio">TAPIO</strong>
         </footer>
 
-    </div>
+    </main>
 
 </body>
+
 </html>
