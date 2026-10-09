@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,8 +31,8 @@ body {
   background:
     radial-gradient(
       ellipse at 50% 0%,
-      rgba(216,180,106,.14),
-      transparent 45%
+      rgba(216,180,106,.18),
+      transparent 48%
     ),
     var(--bg);
   font-family: Tahoma, Arial, sans-serif;
@@ -44,52 +45,45 @@ a {
 }
 
 .wrap {
-  width: min(920px, 92%);
+  width: min(1000px, 96%);
   margin: auto;
 }
 
-/* رأس الموقع */
+/* ===== اللوجو والهيدر ===== */
 
 header {
   text-align: center;
-  padding: 36px 0 18px;
+  padding: 28px 0 12px;
 }
 
-.brand-mark {
-  width: 74px;
-  height: 74px;
-  margin: 0 auto 12px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  color: var(--light);
-  font: 38px Georgia, serif;
-  box-shadow: 0 0 28px #d8b46a20;
+.logo {
+  display: block;
+  width: min(320px, 78vw);
+  max-height: 380px;
+  object-fit: contain;
+  height: auto;
+  margin: 0 auto 18px;
+  border-radius: 18px;
+  filter: drop-shadow(0 0 24px #d8b46a35);
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(2rem, 7vw, 3.3rem);
-  letter-spacing: 2px;
-}
-
-.subtitle {
-  color: var(--gold);
-  margin: 3px 0 0;
-  letter-spacing: 3px;
-  font-size: .9rem;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  color: var(--light);
+  text-shadow: 0 0 25px #d8b46a25;
 }
 
 .intro {
-  color: var(--muted);
-  margin: 12px auto 0;
+  color: var(--light);
+  margin: 8px auto 0;
   max-width: 540px;
+  font-size: clamp(1rem, 3vw, 1.25rem);
 }
 
 .divider {
   height: 1px;
-  width: 100px;
+  width: 150px;
   margin: 22px auto;
   background: linear-gradient(
     90deg,
@@ -97,30 +91,34 @@ h1 {
     var(--gold),
     transparent
   );
+  box-shadow: 0 0 12px #d8b46a55;
 }
+
+/* ===== عنوان المنيو ===== */
 
 .section-title {
   text-align: center;
-  margin: 26px 0 14px;
+  margin: 22px 0 14px;
   color: var(--light);
-  font-size: 1.2rem;
+  font-size: 1.45rem;
 }
 
-/* صورة المنيو */
+/* ===== صورة المنيو ===== */
 
 .menu-card {
   background: #111;
-  border: 1px solid #d8b46a73;
+  border: 1px solid #d8b46a;
   border-radius: 18px;
-  padding: 10px;
-  box-shadow: 0 14px 40px #0005;
+  padding: 5px;
+  box-shadow: 0 14px 40px #0008;
+  overflow: hidden;
 }
 
 .menu-image {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 78vh;
+  max-height: none;
   object-fit: contain;
   border-radius: 11px;
   cursor: zoom-in;
@@ -130,24 +128,24 @@ h1 {
 .hint {
   text-align: center;
   color: var(--muted);
-  font-size: .85rem;
+  font-size: .88rem;
   margin: 8px 0 0;
 }
 
-/* الأزرار */
+/* ===== الأزرار ===== */
 
 .actions {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 12px;
-  margin: 26px auto 32px;
+  gap: 14px;
+  margin: 26px auto 34px;
 }
 
 .btn {
-  min-height: 48px;
-  padding: 12px 20px;
+  min-height: 49px;
+  padding: 12px 22px;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
@@ -155,12 +153,13 @@ h1 {
   gap: 8px;
   font-weight: 700;
   border: 1px solid var(--gold);
-  transition: .2s;
+  transition: transform .2s, box-shadow .2s;
+  cursor: pointer;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 7px 22px #d8b46a24;
+  box-shadow: 0 7px 22px #d8b46a35;
 }
 
 /* زر التقييم */
@@ -172,14 +171,15 @@ h1 {
     var(--gold)
   );
   color: #17120a;
+  box-shadow: 0 5px 20px #d8b46a22;
 }
 
-/* زر فيسبوك - اللوجو فقط */
+/* فيسبوك - الأيقونة فقط */
 
 .facebook-btn {
-  width: 49px;
-  height: 49px;
-  min-height: 49px;
+  width: 52px;
+  height: 52px;
+  min-height: 52px;
   padding: 0;
   border: 1px solid #1877f2;
   border-radius: 50%;
@@ -189,70 +189,87 @@ h1 {
 }
 
 .facebook-btn svg {
-  width: 25px;
-  height: 25px;
+  width: 27px;
+  height: 27px;
   display: block;
 }
 
-/* قسم TAPIO */
+/* ===== قسم TAPIO ===== */
 
 .tapio {
   margin: 34px 0 28px;
-  padding: 25px 20px;
+  padding: 30px 20px;
   text-align: center;
-  border-radius: 18px;
-  background: linear-gradient(
-    145deg,
-    #171717,
-    #0d0d0d
-  );
-  border: 1px solid #d8b46a6b;
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      #d8b46a10,
+      transparent 65%
+    ),
+    linear-gradient(145deg, #171717, #0b0b0b);
+  border: 1px solid #d8b46a;
+  box-shadow: 0 12px 35px #0005;
 }
 
 .tapio-label {
   color: var(--gold);
-  font-size: .8rem;
+  font-size: .78rem;
   letter-spacing: 4px;
   margin: 0 0 4px;
 }
 
 .tapio h2 {
   margin: 0;
-  font-size: 1.65rem;
+  font-size: clamp(2rem, 6vw, 2.8rem);
   letter-spacing: 3px;
+  color: #fff;
 }
 
 .tapio p:not(.tapio-label) {
   color: var(--muted);
-  margin: 8px auto 18px;
+  margin: 8px auto 20px;
   max-width: 540px;
 }
 
 .btn-outline {
   color: var(--light);
   background: #d8b46a0a;
+  border-color: var(--gold);
 }
 
-/* نهاية الصفحة */
+/* ===== نهاية الصفحة ===== */
 
 footer {
   text-align: center;
   padding: 18px 0 30px;
   color: #898276;
-  font-size: .82rem;
+  font-size: .84rem;
 }
 
-/* تكبير المنيو */
+.footer-line {
+  height: 1px;
+  width: 120px;
+  margin: 0 auto 12px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent
+  );
+}
+
+/* ===== تكبير المنيو ===== */
 
 .modal {
   position: fixed;
   inset: 0;
-  z-index: 10;
+  z-index: 100;
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 14px;
-  background: #000f;
+  padding: 12px;
+  background: rgba(0,0,0,.96);
 }
 
 .modal.open {
@@ -261,7 +278,9 @@ footer {
 
 .modal img {
   max-width: 100%;
-  max-height: 92vh;
+  max-height: 94vh;
+  width: auto;
+  height: auto;
   object-fit: contain;
   border-radius: 8px;
 }
@@ -278,30 +297,58 @@ footer {
   color: var(--light);
   font-size: 27px;
   cursor: pointer;
+  z-index: 101;
 }
 
-/* الموبايل */
+/* ===== الموبايل ===== */
 
 @media (max-width: 520px) {
   header {
-    padding-top: 27px;
+    padding-top: 20px;
   }
 
-  .actions {
-    gap: 9px;
+  .logo {
+    width: min(290px, 80vw);
+    max-height: 330px;
+    margin-bottom: 14px;
   }
 
-  .btn {
-    padding: 11px 15px;
-    font-size: .92rem;
+  .wrap {
+    width: 96%;
   }
 
   .menu-card {
-    padding: 6px;
+    padding: 3px;
+    border-radius: 13px;
+  }
+
+  .menu-image {
+    border-radius: 9px;
+  }
+
+  .actions {
+    gap: 11px;
+  }
+
+  .btn {
+    padding: 11px 16px;
+    font-size: .93rem;
+  }
+
+  .facebook-btn {
+    width: 49px;
+    height: 49px;
+    min-height: 49px;
+    padding: 0;
   }
 
   .tapio {
-    padding: 22px 14px;
+    padding: 24px 14px;
+    border-radius: 16px;
+  }
+
+  .tapio-label {
+    letter-spacing: 3px;
   }
 }
 </style>
@@ -309,23 +356,37 @@ footer {
 
 <body>
 
+<!-- ===== الهيدر واللوجو ===== -->
+
 <header class="wrap">
 
-  <div class="brand-mark" aria-hidden="true">د</div>
+  <img
+    class="logo"
+    src="./logo.png"
+    alt="لوجو درابوكا"
+    onerror="this.style.display='none';document.getElementById('logo-error').style.display='block';"
+  >
+
+  <p
+    id="logo-error"
+    style="display:none;color:#d8b46a;font-size:.9rem"
+  >
+    تأكد من رفع صورة اللوجو في GitHub باسم logo.png
+  </p>
 
   <h1>درابوكا</h1>
-
-  <p class="subtitle">DRABOKA</p>
 
   <div class="divider"></div>
 
   <p class="intro">
-    اختار مشروبك المفضل واستمتع بوقتك معانا ☕
+    درابوكا.. قهوتك، مودك، حكايتك ☕🖤
   </p>
 
 </header>
 
 <main class="wrap">
+
+  <!-- ===== المنيو ===== -->
 
   <h2 class="section-title">المنيو</h2>
 
@@ -345,14 +406,12 @@ footer {
   </div>
 
   <p class="hint">
-    اضغط على صورة المنيو علشان تشوفها بحجم أكبر
+    اضغط على صورة المنيو علشان تشوفها بحجم أكبر 🔍
   </p>
 
-  <!-- أزرار التواصل -->
+  <!-- ===== أزرار التواصل ===== -->
 
-  <div class="actions" aria-label="روابط درابوكا">
-
-    <!-- زر التقييم -->
+  <div class="actions">
 
     <a
       class="btn btn-gold"
@@ -363,7 +422,7 @@ footer {
       ⭐ رأيك يهمني يدولي
     </a>
 
-    <!-- زر فيسبوك باللوجو فقط -->
+    <!-- فيسبوك بالأيقونة فقط -->
 
     <a
       class="btn facebook-btn"
@@ -374,10 +433,7 @@ footer {
       title="فيسبوك"
     >
 
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
         <path
           fill="currentColor"
           d="M13.4 21v-8.2h2.8l.42-3.2H13.4V7.55c0-.93.26-1.56 1.6-1.56h1.72V3.13c-.3-.04-1.34-.13-2.55-.13-2.53 0-4.26 1.54-4.26 4.37V9.6H7.05v3.2h2.86V21h3.49z"
@@ -388,15 +444,15 @@ footer {
 
   </div>
 
-  <!-- قسم TAPIO -->
+  <!-- ===== قسم TAPIO ===== -->
 
-  <section class="tapio" aria-labelledby="tapio-title">
+  <section class="tapio">
 
     <p class="tapio-label">
       SMART NFC EXPERIENCE
     </p>
 
-    <h2 id="tapio-title">TAPIO</h2>
+    <h2>TAPIO</h2>
 
     <p>
       خلّي عملاءك يوصلوا للتقييمات وصفحاتك بسهولة
@@ -416,11 +472,17 @@ footer {
 
 </main>
 
+<!-- ===== الفوتر ===== -->
+
 <footer class="wrap">
+
+  <div class="footer-line"></div>
+
   درابوكا © 2026 · تجربة مميزة مع TAPIO
+
 </footer>
 
-<!-- نافذة تكبير المنيو -->
+<!-- ===== نافذة تكبير المنيو ===== -->
 
 <div
   class="modal"
