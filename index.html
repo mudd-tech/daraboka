@@ -2,508 +2,623 @@
 <html lang="ar" dir="rtl">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090909">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090909">
 
-<title>درابوكا | Draboka</title>
+    <title>درابوكا | Draboka</title>
 
-<style>
-:root {
-  --bg: #090909;
-  --gold: #d8b46a;
-  --light: #f5dda0;
-  --text: #f7f2e8;
-  --muted: #b9b2a5;
-}
+    <meta name="description" content="درابوكا.. قهوتك، مودك، حكايتك. اكتشف المنيو وشاركنا رأيك.">
 
-* {
-  box-sizing: border-box;
-}
+    <style>
+        :root {
+            --bg: #090909;
+            --gold: #d8b46a;
+            --light-gold: #f5dda0;
+            --text: #f5f5f5;
+            --muted: #bdbdbd;
+            --card: #111111;
+        }
 
-html {
-  scroll-behavior: smooth;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-body {
-  margin: 0;
-  color: var(--text);
-  background:
-    radial-gradient(ellipse at 50% 0%, #d8b46a20, transparent 48%),
-    var(--bg);
-  font-family: Tahoma, Arial, sans-serif;
-  line-height: 1.7;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+        body {
+            background:
+                radial-gradient(ellipse at top, #241c0e 0%, #090909 42%),
+                var(--bg);
+            color: var(--text);
+            font-family: Arial, Tahoma, sans-serif;
+            text-align: center;
+            min-height: 100vh;
+            line-height: 1.7;
+        }
 
-.wrap {
-  width: min(1000px, 96%);
-  margin: auto;
-}
+        a {
+            text-decoration: none;
+        }
 
-/* ===== اللوجو ===== */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px 18px 45px;
+        }
 
-header {
-  text-align: center;
-  padding: 24px 0 12px;
-}
+        /* اللوجو */
 
-.logo {
-  display: block;
-  width: min(290px, 76vw);
-  max-height: 330px;
-  height: auto;
-  object-fit: contain;
-  margin: 0 auto 15px;
-  filter: drop-shadow(0 0 24px #d8b46a35);
-}
+        .logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px auto 12px;
+        }
 
-h1 {
-  margin: 0;
-  font-size: clamp(2rem, 6vw, 3rem);
-  color: var(--light);
-}
+        .logo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            box-shadow:
+                0 0 18px rgba(216, 180, 106, 0.22),
+                0 0 35px rgba(216, 180, 106, 0.08);
+            display: block;
+        }
 
-.intro {
-  color: var(--light);
-  margin: 8px auto 0;
-  max-width: 540px;
-  font-size: clamp(1rem, 3vw, 1.2rem);
-}
+        /* العنوان */
 
-.divider {
-  height: 1px;
-  width: 150px;
-  margin: 20px auto;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--gold),
-    transparent
-  );
-}
+        .brand-name {
+            color: var(--gold);
+            font-size: 34px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 3px;
+        }
 
-/* ===== عنوان المنيو ===== */
+        .tagline {
+            color: var(--light-gold);
+            font-size: 17px;
+            margin-bottom: 22px;
+        }
 
-.section-title {
-  text-align: center;
-  margin: 22px 0 18px;
-  color: var(--light);
-  font-size: 1.4rem;
-}
+        .divider {
+            width: 85px;
+            height: 2px;
+            background: var(--gold);
+            margin: 20px auto 28px;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(216, 180, 106, 0.5);
+        }
 
-/* ===== المنيو: حجم أصغر وحواف دائرية ===== */
+        /* العناوين */
 
-.menu-card {
-  background: #111;
-  border: 2px solid var(--gold);
-  border-radius: 28px;
-  padding: 5px;
+        .section-title {
+            color: var(--gold);
+            font-size: 25px;
+            margin: 24px 0 16px;
+        }
 
-  /* تصغير واضح وتوسيط المنيو */
-  width: 80%;
-  max-width: 650px;
-  margin: 0 auto;
+        .section-description {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
 
-  overflow: hidden;
-  box-shadow: 0 14px 40px #0008;
-}
+        /* صورة المنيو - حجم أكبر */
 
-.menu-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: none;
-  object-fit: contain;
-  border-radius: 22px;
-  cursor: zoom-in;
-  background: #f5f0e7;
-}
+        .menu-section {
+            width: 100%;
+            margin: 0 auto 32px;
+        }
 
-.hint {
-  text-align: center;
-  color: var(--muted);
-  font-size: .85rem;
-  margin: 10px 0 0;
-}
+        .menu-card {
+            width: 90%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 8px;
+            background: linear-gradient(145deg, #1a1a1a, #0c0c0c);
+            border: 2px solid var(--gold);
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow:
+                0 0 20px rgba(216, 180, 106, 0.13),
+                0 12px 35px rgba(0, 0, 0, 0.45);
+        }
 
-/* ===== الأزرار ===== */
+        .menu-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: none;
+            object-fit: contain;
+            border-radius: 14px;
+            cursor: zoom-in;
+            transition: transform 0.25s ease;
+        }
 
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 13px;
-  margin: 25px auto 34px;
-}
+        .menu-image:hover {
+            transform: scale(1.01);
+        }
 
-.btn {
-  min-height: 49px;
-  padding: 12px 22px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-weight: 700;
-  border: 1px solid var(--gold);
-  transition: transform .2s, box-shadow .2s;
-  cursor: pointer;
-}
+        .menu-hint {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 12px;
+        }
 
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 7px 22px #d8b46a35;
-}
+        /* الأزرار */
 
-.btn-gold {
-  background: linear-gradient(135deg, var(--light), var(--gold));
-  color: #17120a;
-}
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin: 25px auto;
+        }
 
-/* ===== فيسبوك ===== */
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            min-height: 49px;
+            padding: 11px 22px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.25s ease;
+        }
 
-.facebook-btn {
-  width: 51px;
-  height: 51px;
-  min-height: 51px;
-  padding: 0;
-  border: 1px solid #1877f2;
-  border-radius: 50%;
-  background: #1877f2;
-  color: #fff;
-  box-shadow: 0 0 20px #1877f229;
-}
+        .btn-gold {
+            color: #17120a;
+            background: linear-gradient(
+                135deg,
+                var(--light-gold),
+                var(--gold)
+            );
+            box-shadow: 0 5px 18px rgba(216, 180, 106, 0.13);
+        }
 
-.facebook-btn svg {
-  width: 27px;
-  height: 27px;
-  display: block;
-}
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 23px rgba(216, 180, 106, 0.25);
+        }
 
-/* ===== TAPIO ===== */
+        /* زر فيسبوك - الأيقونة فقط */
 
-.tapio {
-  margin: 34px 0 28px;
-  padding: 28px 20px;
-  text-align: center;
-  border-radius: 20px;
-  background:
-    radial-gradient(ellipse at 50% 0%, #d8b46a10, transparent 65%),
-    linear-gradient(145deg, #171717, #0b0b0b);
-  border: 1px solid var(--gold);
-  box-shadow: 0 12px 35px #0005;
-}
+        .facebook-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 49px;
+            height: 49px;
+            border-radius: 50%;
+            background: #1877F2;
+            color: #ffffff;
+            transition: 0.25s ease;
+            box-shadow: 0 5px 18px rgba(24, 119, 242, 0.2);
+        }
 
-.tapio-label {
-  color: var(--gold);
-  font-size: .78rem;
-  letter-spacing: 4px;
-  margin: 0 0 4px;
-}
+        .facebook-icon:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: #0866ff;
+        }
 
-.tapio h2 {
-  margin: 0;
-  font-size: clamp(2rem, 6vw, 2.8rem);
-  letter-spacing: 3px;
-  color: #fff;
-}
+        .facebook-icon svg {
+            width: 27px;
+            height: 27px;
+            fill: currentColor;
+        }
 
-.tapio p:not(.tapio-label) {
-  color: var(--muted);
-  margin: 8px auto 20px;
-  max-width: 540px;
-}
+        /* قسم Tapio */
 
-.btn-outline {
-  color: var(--light);
-  background: #d8b46a0a;
-  border-color: var(--gold);
-}
+        .tapio-card {
+            width: 100%;
+            max-width: 760px;
+            margin: 28px auto;
+            padding: 27px 20px;
+            background: linear-gradient(145deg, #17140e, #101010);
+            border: 1px solid rgba(216, 180, 106, 0.65);
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
 
-/* ===== نهاية الصفحة ===== */
+        .tapio-name {
+            color: var(--gold);
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
 
-footer {
-  text-align: center;
-  padding: 18px 0 30px;
-  color: #898276;
-  font-size: .84rem;
-}
+        .tapio-title {
+            color: var(--light-gold);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
 
-.footer-line {
-  height: 1px;
-  width: 120px;
-  margin: 0 auto 12px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--gold),
-    transparent
-  );
-}
+        .tapio-description {
+            color: #d2d2d2;
+            font-size: 15px;
+            max-width: 570px;
+            margin: 0 auto 20px;
+        }
 
-/* ===== تكبير المنيو ===== */
+        .whatsapp-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 9px;
+            padding: 12px 23px;
+            background: #25D366;
+            color: #ffffff;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.25s ease;
+        }
 
-.modal {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-  background: rgba(0,0,0,.96);
-}
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            background: #1ebe5d;
+        }
 
-.modal.open {
-  display: flex;
-}
+        .whatsapp-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
 
-.modal img {
-  max-width: 100%;
-  max-height: 94vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 12px;
-}
+        /* الفوتر */
 
-.close-modal {
-  position: fixed;
-  top: 12px;
-  left: 14px;
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  background: #171717;
-  color: var(--light);
-  font-size: 27px;
-  cursor: pointer;
-  z-index: 101;
-}
+        footer {
+            margin-top: 40px;
+            padding: 22px 10px 5px;
+            border-top: 1px solid rgba(216, 180, 106, 0.2);
+            color: #999;
+            font-size: 13px;
+        }
 
-/* ===== الموبايل ===== */
+        footer span {
+            color: var(--gold);
+        }
 
-@media (max-width: 520px) {
+        /* نافذة عرض المنيو بالحجم الكامل */
 
-  header {
-    padding-top: 18px;
-  }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.96);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
 
-  .logo {
-    width: min(270px, 76vw);
-    max-height: 310px;
-  }
+        .modal.active {
+            display: flex;
+        }
 
-  .wrap {
-    width: 96%;
-  }
+        .modal-image {
+            display: block;
+            max-width: 100%;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            animation: appear 0.2s ease;
+        }
 
-  /* المنيو أصغر على الموبايل */
-  .menu-card {
-    width: 90%;
-    max-width: 390px;
-    padding: 4px;
-    border-radius: 22px;
-  }
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            left: 20px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            line-height: 1;
+            z-index: 10000;
+        }
 
-  .menu-image {
-    border-radius: 17px;
-  }
+        .modal-close:hover {
+            color: var(--gold);
+        }
 
-  .actions {
-    gap: 10px;
-  }
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: scale(0.96);
+            }
 
-  .btn {
-    padding: 11px 16px;
-    font-size: .92rem;
-  }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 
-  .facebook-btn {
-    width: 49px;
-    height: 49px;
-    min-height: 49px;
-    padding: 0;
-  }
+        /* الموبايل */
 
-  .tapio {
-    padding: 24px 14px;
-    border-radius: 16px;
-  }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 10px 35px;
+            }
 
-  .tapio-label {
-    letter-spacing: 3px;
-  }
-}
-</style>
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .brand-name {
+                font-size: 29px;
+            }
+
+            .tagline {
+                font-size: 14px;
+                margin-bottom: 18px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .menu-card {
+                width: 95%;
+                max-width: none;
+                padding: 5px;
+                border-radius: 15px;
+            }
+
+            .menu-image {
+                border-radius: 10px;
+            }
+
+            .buttons {
+                gap: 12px;
+            }
+
+            .btn {
+                padding: 11px 16px;
+                font-size: 14px;
+            }
+
+            .tapio-card {
+                padding: 23px 15px;
+            }
+
+            .tapio-name {
+                font-size: 27px;
+            }
+
+            .tapio-title {
+                font-size: 18px;
+            }
+
+            .tapio-description {
+                font-size: 14px;
+            }
+
+            .modal {
+                padding: 8px;
+            }
+
+            .modal-image {
+                max-width: 100%;
+                max-height: 88vh;
+            }
+
+            .modal-close {
+                top: 8px;
+                left: 12px;
+                font-size: 36px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header class="wrap">
+    <main class="container">
 
-  <img
-    class="logo"
-    src="./logo.png"
-    alt="لوجو درابوكا"
-    onerror="this.style.display='none';document.getElementById('logo-error').style.display='block';"
-  >
+        <!-- اللوجو واسم المكان -->
 
-  <p
-    id="logo-error"
-    style="display:none;color:#d8b46a;font-size:.9rem"
-  >
-    تأكد من رفع صورة اللوجو باسم logo.png
-  </p>
+        <header>
+            <div class="logo-wrapper">
+                <img
+                    src="./logo.png"
+                    alt="لوجو درابوكا"
+                    class="logo"
+                >
+            </div>
 
-  <h1>درابوكا</h1>
+            <h1 class="brand-name">درابوكا</h1>
 
-  <div class="divider"></div>
+            <p class="tagline">
+                درابوكا.. قهوتك، مودك، حكايتك ☕🖤
+            </p>
 
-  <p class="intro">
-    درابوكا.. قهوتك، مودك، حكايتك ☕🖤
-  </p>
+            <div class="divider"></div>
+        </header>
 
-</header>
+        <!-- المنيو -->
 
-<main class="wrap">
+        <section class="menu-section" id="menu">
 
-  <h2 class="section-title">المنيو</h2>
+            <h2 class="section-title">منيو درابوكا</h2>
 
-  <div class="menu-card">
+            <p class="section-description">
+                اختار مشروبك واستمتع بوقتك معانا ☕
+            </p>
 
-    <img
-      class="menu-image"
-      src="./menu.PNG"
-      alt="منيو درابوكا"
-      role="button"
-      tabindex="0"
-      aria-label="اضغط لتكبير المنيو"
-      onclick="openMenu()"
-      onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openMenu();}"
+            <div class="menu-card">
+
+                <img
+                    src="./menu.PNG"
+                    alt="منيو درابوكا"
+                    class="menu-image"
+                    id="menuImage"
+                    onclick="openMenu()"
+                >
+
+            </div>
+
+            <p class="menu-hint">
+                اضغط على صورة المنيو لعرضها بحجم أكبر 🔍
+            </p>
+
+        </section>
+
+        <!-- أزرار التواصل والتقييم -->
+
+        <section class="buttons">
+
+            <a
+                class="btn btn-gold"
+                href="https://maps.app.goo.gl/TSXeAYqSHPhptaj89?g_st=ic"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                ⭐ رأيك يهمني يدولي
+            </a>
+
+            <a
+                class="facebook-icon"
+                href="https://www.facebook.com/share/1JXTHt2vqq/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="صفحة درابوكا على فيسبوك"
+                title="فيسبوك"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.6 1.6-1.6h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.1H7v3.2h2.8V21h3.7z"/>
+                </svg>
+            </a>
+
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- قسم Tapio -->
+
+        <section class="tapio-card">
+
+            <h2 class="tapio-name">TAPIO</h2>
+
+            <h3 class="tapio-title">
+                خلي التقييم أسهل مع Tapio
+            </h3>
+
+            <p class="tapio-description">
+                ستاند ذكي بتقنية NFC يساعد عملاءك يوصلوا لصفحة التقييم
+                بسهولة عن طريق تقريب الموبايل، من غير ما يحتاجوا يدوروا على الرابط.
+            </p>
+
+            <a
+                class="whatsapp-btn"
+                href="https://wa.me/201284424161"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.5 0 .14 5.36.14 11.94c0 2.1.55 4.15 1.6 5.96L0 24l6.25-1.64a11.9 11.9 0 0 0 5.83 1.49h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.18-3.51-8.43ZM12.09 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.71.97.99-3.62-.23-.37a9.86 9.86 0 0 1-1.51-5.25c0-5.46 4.44-9.9 9.9-9.9 2.65 0 5.14 1.03 7.01 2.9a9.84 9.84 0 0 1 2.9 7c0 5.46-4.44 9.9-9.94 9.9Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.49s1.08 2.89 1.23 3.09c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.37.2 1.89.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+                </svg>
+
+                تواصل معانا على واتساب
+            </a>
+
+        </section>
+
+        <!-- نهاية الصفحة -->
+
+        <footer>
+            <p>
+                <span>درابوكا</span> © 2026 — كل الحقوق محفوظة
+            </p>
+
+            <p>
+                قهوتك، مودك، حكايتك ☕
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- نافذة تكبير المنيو -->
+
+    <div
+        class="modal"
+        id="menuModal"
+        onclick="closeMenuOnBackground(event)"
+        aria-label="عرض المنيو بالحجم الكامل"
     >
 
-  </div>
+        <button
+            class="modal-close"
+            onclick="closeMenu()"
+            aria-label="إغلاق"
+            type="button"
+        >
+            &times;
+        </button>
 
-  <p class="hint">
-    اضغط على صورة المنيو علشان تشوفها بحجم أكبر 🔍
-  </p>
+        <img
+            src="./menu.PNG"
+            alt="منيو درابوكا بالحجم الكامل"
+            class="modal-image"
+            id="modalImage"
+        >
 
-  <div class="actions">
+    </div>
 
-    <a
-      class="btn btn-gold"
-      href="https://maps.app.goo.gl/TSXeAYqSHPhptaj89?g_st=ic"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      ⭐ رأيك يهمني يدولي
-    </a>
+    <script>
+        const menuModal = document.getElementById("menuModal");
+        const modalImage = document.getElementById("modalImage");
 
-    <a
-      class="btn facebook-btn"
-      href="https://www.facebook.com/share/1JXTHt2vqq/?mibextid=wwXIfr"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="صفحة درابوكا على فيسبوك"
-      title="فيسبوك"
-    >
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          fill="currentColor"
-          d="M13.4 21v-8.2h2.8l.42-3.2H13.4V7.55c0-.93.26-1.56 1.6-1.56h1.72V3.13c-.3-.04-1.34-.13-2.55-.13-2.53 0-4.26 1.54-4.26 4.37V9.6H7.05v3.2h2.86V21h3.49z"
-        />
-      </svg>
-    </a>
+        function openMenu() {
+            menuModal.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
 
-  </div>
+        function closeMenu() {
+            menuModal.classList.remove("active");
+            document.body.style.overflow = "";
+        }
 
-  <section class="tapio">
+        function closeMenuOnBackground(event) {
+            if (event.target === menuModal) {
+                closeMenu();
+            }
+        }
 
-    <p class="tapio-label">SMART NFC EXPERIENCE</p>
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
 
-    <h2>TAPIO</h2>
+        // لو صورة المنيو لم يتم تحميلها، يظهر تنبيه واضح في وحدة التحكم.
+        document.getElementById("menuImage").addEventListener("error", function() {
+            console.error("تأكد من وجود الملف menu.PNG بجوار index.html");
+        });
 
-    <p>
-      خلّي عملاءك يوصلوا للتقييمات وصفحاتك بسهولة
-      عن طريق ستاند ذكي بتقنية NFC.
-    </p>
-
-    <a
-      class="btn btn-outline"
-      href="https://wa.me/201284424161?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20Tapio%D8%8C%20%D8%B9%D8%A7%D9%88%D8%B2%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%20NFC"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      اطلب ستاند Tapio على واتساب
-    </a>
-
-  </section>
-
-</main>
-
-<footer class="wrap">
-  <div class="footer-line"></div>
-  درابوكا © 2026 · تجربة مميزة مع TAPIO
-</footer>
-
-<div
-  class="modal"
-  id="menuModal"
-  role="dialog"
-  aria-modal="true"
-  aria-label="عرض المنيو بالحجم الكامل"
-  onclick="closeMenu(event)"
->
-
-  <button
-    class="close-modal"
-    type="button"
-    aria-label="إغلاق"
-    onclick="closeMenu(event)"
-  >
-    ×
-  </button>
-
-  <img
-    src="./menu.PNG"
-    alt="منيو درابوكا بالحجم الكامل"
-  >
-
-</div>
-
-<script>
-const menuModal = document.getElementById("menuModal");
-
-function openMenu() {
-  menuModal.classList.add("open");
-  document.body.style.overflow = "hidden";
-}
-
-function closeMenu(event) {
-  if (
-    event.target === menuModal ||
-    event.target.closest(".close-modal")
-  ) {
-    menuModal.classList.remove("open");
-    document.body.style.overflow = "";
-  }
-}
-
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    menuModal.classList.remove("open");
-    document.body.style.overflow = "";
-  }
-});
-</script>
+        document.querySelector(".logo").addEventListener("error", function() {
+            console.error("تأكد من وجود الملف logo.png بجوار index.html");
+        });
+    </script>
 
 </body>
 </html>
