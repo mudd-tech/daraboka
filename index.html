@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,42 +44,53 @@ a {
 }
 
 .wrap {
-  width: min(1000px, 96%);
+  width: min(920px, 92%);
   margin: auto;
 }
 
-/* اللوجو */
+/* رأس الموقع */
 
 header {
   text-align: center;
-  padding: 22px 0 12px;
+  padding: 36px 0 18px;
 }
 
-.logo {
-  display: block;
-  width: min(300px, 75vw);
-  height: auto;
-  margin: 0 auto 14px;
+.brand-mark {
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 12px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold);
   border-radius: 50%;
+  color: var(--light);
+  font: 38px Georgia, serif;
   box-shadow: 0 0 28px #d8b46a20;
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(1.7rem, 5vw, 2.6rem);
-  color: var(--light);
+  font-size: clamp(2rem, 7vw, 3.3rem);
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  color: var(--gold);
+  margin: 3px 0 0;
+  letter-spacing: 3px;
+  font-size: .9rem;
 }
 
 .intro {
   color: var(--muted);
-  margin: 8px auto 0;
+  margin: 12px auto 0;
   max-width: 540px;
 }
 
 .divider {
   height: 1px;
-  width: 120px;
-  margin: 20px auto;
+  width: 100px;
+  margin: 22px auto;
   background: linear-gradient(
     90deg,
     transparent,
@@ -89,22 +99,20 @@ h1 {
   );
 }
 
-/* عنوان المنيو */
-
 .section-title {
   text-align: center;
-  margin: 22px 0 14px;
+  margin: 26px 0 14px;
   color: var(--light);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
-/* المنيو بحجم أكبر */
+/* صورة المنيو */
 
 .menu-card {
   background: #111;
-  border: 1px solid #d8b46a85;
+  border: 1px solid #d8b46a73;
   border-radius: 18px;
-  padding: 5px;
+  padding: 10px;
   box-shadow: 0 14px 40px #0005;
 }
 
@@ -112,7 +120,7 @@ h1 {
   display: block;
   width: 100%;
   height: auto;
-  max-height: none;
+  max-height: 78vh;
   object-fit: contain;
   border-radius: 11px;
   cursor: zoom-in;
@@ -134,7 +142,7 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 12px;
-  margin: 25px auto 32px;
+  margin: 26px auto 32px;
 }
 
 .btn {
@@ -166,7 +174,7 @@ h1 {
   color: #17120a;
 }
 
-/* فيسبوك - اللوجو فقط */
+/* زر فيسبوك - اللوجو فقط */
 
 .facebook-btn {
   width: 49px;
@@ -186,7 +194,7 @@ h1 {
   display: block;
 }
 
-/* TAPIO */
+/* قسم TAPIO */
 
 .tapio {
   margin: 34px 0 28px;
@@ -243,7 +251,7 @@ footer {
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 14px;
   background: #000f;
 }
 
@@ -253,7 +261,7 @@ footer {
 
 .modal img {
   max-width: 100%;
-  max-height: 96vh;
+  max-height: 92vh;
   object-fit: contain;
   border-radius: 8px;
 }
@@ -276,19 +284,7 @@ footer {
 
 @media (max-width: 520px) {
   header {
-    padding-top: 16px;
-  }
-
-  .logo {
-    width: min(280px, 78vw);
-  }
-
-  .wrap {
-    width: 97%;
-  }
-
-  .menu-card {
-    padding: 3px;
+    padding-top: 27px;
   }
 
   .actions {
@@ -300,6 +296,10 @@ footer {
     font-size: .92rem;
   }
 
+  .menu-card {
+    padding: 6px;
+  }
+
   .tapio {
     padding: 22px 14px;
   }
@@ -309,25 +309,13 @@ footer {
 
 <body>
 
-<!-- اللوجو الأصلي -->
-
 <header class="wrap">
 
-  <img
-    class="logo"
-    src="./logo.png"
-    alt="لوجو درابوكا"
-    onerror="this.style.display='none';document.getElementById('logo-error').style.display='block';"
-  >
-
-  <p
-    id="logo-error"
-    style="display:none;color:#d8b46a;font-size:.9rem"
-  >
-    تأكد من رفع صورة اللوجو باسم logo.png
-  </p>
+  <div class="brand-mark" aria-hidden="true">د</div>
 
   <h1>درابوكا</h1>
+
+  <p class="subtitle">DRABOKA</p>
 
   <div class="divider"></div>
 
@@ -338,8 +326,6 @@ footer {
 </header>
 
 <main class="wrap">
-
-  <!-- المنيو -->
 
   <h2 class="section-title">المنيو</h2>
 
@@ -364,7 +350,9 @@ footer {
 
   <!-- أزرار التواصل -->
 
-  <div class="actions">
+  <div class="actions" aria-label="روابط درابوكا">
+
+    <!-- زر التقييم -->
 
     <a
       class="btn btn-gold"
@@ -386,7 +374,10 @@ footer {
       title="فيسبوك"
     >
 
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
         <path
           fill="currentColor"
           d="M13.4 21v-8.2h2.8l.42-3.2H13.4V7.55c0-.93.26-1.56 1.6-1.56h1.72V3.13c-.3-.04-1.34-.13-2.55-.13-2.53 0-4.26 1.54-4.26 4.37V9.6H7.05v3.2h2.86V21h3.49z"
@@ -397,15 +388,15 @@ footer {
 
   </div>
 
-  <!-- TAPIO -->
+  <!-- قسم TAPIO -->
 
-  <section class="tapio">
+  <section class="tapio" aria-labelledby="tapio-title">
 
     <p class="tapio-label">
       SMART NFC EXPERIENCE
     </p>
 
-    <h2>TAPIO</h2>
+    <h2 id="tapio-title">TAPIO</h2>
 
     <p>
       خلّي عملاءك يوصلوا للتقييمات وصفحاتك بسهولة
